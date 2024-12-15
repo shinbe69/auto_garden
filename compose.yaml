@@ -7,3 +7,8 @@ services:
       - ./:/app
     ports:
       - 3001:3001
+  DB:
+    image: mysql:8.0-oracle
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
