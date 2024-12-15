@@ -1,0 +1,9 @@
+services:
+  API:
+    image: node:lts-alpine3.20
+    command: sh -c "npm i && npm run dev"
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - 3001:3001
