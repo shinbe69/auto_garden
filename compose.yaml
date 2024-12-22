@@ -7,8 +7,6 @@ services:
       - ./:/app
     ports:
       - 3001:3001
-  DB:
-    image: arm64v8/mysql:8.0-oracle
-    restart: always
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
+  CACHE:
+    image: redis:7.4-alpine
+    

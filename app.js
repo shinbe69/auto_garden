@@ -2,10 +2,9 @@ const express = require('express')
 require('dotenv').config()
 const app = express()
 app.use(express.json())
+const router = require('./API/router')
 
-app.get('/check-health', (req, res) => {
-    res.send("hello from Sang'server")
-})
+app.use(router)
 
 app.listen(process.env.PORT || 3001, process.env.HOST || '0.0.0.0', (err) => {
     if (err) console.log('*** Setting up server failed! ***')
