@@ -3,10 +3,11 @@ services:
     image: node:lts-alpine3.20
     command: sh -c "npm i && npm run dev"
     working_dir: /app
+    restart: always
     volumes:
       - ./:/app
     ports:
       - 3001:3001
   CACHE:
     image: redis:7.4-alpine
-    
+    restart: always
