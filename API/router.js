@@ -7,10 +7,10 @@ router.get('/check-health', (req, res) => {
 })
 
 router.post('/data', async (req, res) => {
-    let { moisture, temperature } = req.body
-    if (moisture === undefined || temperature === undefined) return res.sendStatus(400)
-    console.log('Moisture: %s, Temperature: %s', moisture, temperature)
-    await client.RPUSH('data', JSON.stringify({moisture, temperature}))
+    let { moisture } = req.body
+    if (moisture === undefined) return res.sendStatus(400)
+    console.log('Moisture: %s', moisture)
+    await client.RPUSH('data', JSON.stringify({moisture}))
     res.sendStatus(200)
 })
 
